@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering & Construction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #005b96;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    main {
+      padding: 2rem;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #ddd;
+    }
+    .social-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .social-buttons a {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .social-buttons a.fb {
+      background-color: #1877f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switch">
+    <button onclick="toggleLang()">বাংলা / English</button>
+  </div>
+  <header>
+    <h1 id="title">Engineering & Construction Company</h1>
+  </header>
+  <main>
+    <div class="content">
+      <p id="description">
+        We are a trusted engineering and construction company providing quality service in building, bridge, and infrastructure projects.
+      </p>
+
+      <div class="gallery" id="gallery">
+        <img src="https://via.placeholder.com/200x150?text=Project+1" alt="Project 1">
+        <img src="https://via.placeholder.com/200x150?text=Project+2" alt="Project 2">
+        <img src="https://via.placeholder.com/200x150?text=Project+3" alt="Project 3">
+      </div>
+    </div>
+  </main>
+  <div class="social-buttons">
+    <a href="https://wa.me/8801234567890" target="_blank">WhatsApp</a>
+    <a href="https://m.me/yourfacebookpage" target="_blank" class="fb">Facebook</a>
+  </div>
+  <footer>
+    <p id="footer">Contact us: info@yourcompany.com</p>
+  </footer>
+  <script>
+    let currentLang = 'en';
+    const texts = {
+      en: {
+        title: "Engineering & Construction Company",
+        description:
+          "We are a trusted engineering and construction company providing quality service in building, bridge, and infrastructure projects.",
+        footer: "Contact us: info@yourcompany.com",
+      },
+      bn: {
+        title: "ইঞ্জিনিয়ারিং ও কনস্ট্রাকশন কোম্পানি",
+        description:
+          "আমরা একটি বিশ্বস্ত ইঞ্জিনিয়ারিং ও কনস্ট্রাকশন কোম্পানি যারা ভবন, ব্রিজ এবং অবকাঠামো নির্মাণে মানসম্পন্ন সেবা প্রদান করে থাকি।",
+        footer: "যোগাযোগ করুন: info@yourcompany.com",
+      },
+    };
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'bn' : 'en';
+      document.getElementById("title").innerText = texts[currentLang].title;
+      document.getElementById("description").innerText = texts[currentLang].description;
+      document.getElementById("footer").innerText = texts[currentLang].footer;
+    }
+  </script>
+</body>
+</html>
